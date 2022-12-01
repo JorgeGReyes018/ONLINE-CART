@@ -11,42 +11,40 @@ for (var i = 0; i< cartRemove.length; i++) {
 var cartAdd = document.getElementsByClassName("cartAdd")
 for (var i = 0; i< cartAdd.length; i++) {
     var button = cartAdd[i]
-    button.addEventListener("click", addItemToCart)
+    button.addEventListener("click", cartAddClicked)
 } 
 
-// 25:28 min mark ^^^^
+function cartAddClicked (e) {
+    var button = e.target
+    var product = button.parentElement.parentElement
+    var itemName = product.getElementsByClassName("itemName")[0].innerText
+    var itemPrice = product.getElementsByClassName("itemPrice")[0].innerText
+    var itemImg = product.getElementsByClassName("itemImg")[0].src
+    addItemToCart(itemName, itemPrice, itemImg)
+}
+// 35 min mark https://www.youtube.com/watch?v=YeFzkC2awTM&list=WL&index=4
 
-//         var buttonClicked = tap.target
-//         var product = buttonClicked.parentElement.parentElement
-//         var itemName = product.getElementsByClassName("itemName")[0].innerText
-//         var itemPrice = product.getElementsByClassName("itemPrice")[0].innerText
-//         var itemImg = product.getElementsByClassName("itemImg")[0].src
-//         addItemToCart(itemName, itemPrice, itemImg)
-//     })
-// }
-
-// function addItemToCart(itemName, itemPrice, itemImg){
-//     var newCartItem = document.createElement("tr")
-//     newCartItem.classList.add("cartItem")
-//     var cartBag = document.getElementsByClassName("cartBag")[0]
-//     var cartItemNames = cartBag.getElementsByClassName("cartItemName")
-//     for (var i = 0; i < cartBag.length; i++) {
-//         if (cartItemNames[i].innerText == itemName) {
-//             console.log("Item is already in the Cart")
-//             return
-//         }
-//     }
-    // -------35 min mark https://www.youtube.com/watch?v=YeFzkC2awTM&list=WL&index=4--------
-//     var cartItemContents = `<td class="col-1"><img class="cartItemImg" src="${itemImg}" alt=""></td>
-//     <td>
-//         <h4 class="cartItemName">${itemName}</h4><input class="itemQty" type="number" value="1">
-//     </td>
-//     <td>
-//         <h4 class="itemPrice">${itemPrice}</h4><button class="cartRemove">-</button>
-//     </td>`
-//     newCartItem.innerHTML = cartItemContents
-//     cartBag.append(newCartItem)
-// }
+function addItemToCart(itemName, itemPrice, itemImg){
+    var newCartItem = document.createElement("tr")
+    newCartItem.classList.add("cartItem")
+    var cartBag = document.getElementsByClassName("cartBag")[0]
+    var cartItemNames = cartBag.getElementsByClassName("cartItemName")
+    for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == itemName) {
+            alert("Item is already in the Cart")
+            return
+        }
+    }
+    var cartItemContents = `<td class="col-1"><img class="cartItemImg" src="${itemImg}" alt=""></td>
+    <td>
+        <h4 class="cartItemName">${itemName}</h4><input class="itemQty" type="number" value="1">
+    </td>
+    <td>
+        <h4 class="itemPrice">${itemPrice}</h4><button class="cartRemove">-</button>
+    </td>`
+    newCartItem.innerHTML = cartItemContents
+    cartBag.append(newCartItem)
+}
 
 var qtyNum = document.getElementsByClassName("itemQty")
 for (var i = 0; i < qtyNum.length; i++) {
