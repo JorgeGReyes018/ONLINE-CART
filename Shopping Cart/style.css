@@ -79,8 +79,9 @@ footer h2 {
   margin-top: 30px;
 }
 .showcase {
-  background-image: url(https://via.placeholder.com/1700x560);
-  background-size: contain;
+  border: solid;
+  border-color: black;
+  border-width: 1px;
   max-width: 1700px;
   width: 90%;
   height: 560px;
@@ -88,21 +89,26 @@ footer h2 {
 }
 .promo {
   display: inline-flex;
-  flex-direction: column;
+  flex-direction: rows;
   width: 100%;
   height: 100%;
+  margin: auto;
+  max-height: 560px;
   text-align: center;
 }
-.promoLink {
-  font-size: 1rem;
+.promo img {
+  max-width: 500px;
+  max-height: 500px;
+  width: 33%;
   margin: auto;
-  height: 56px;
-  width: 16%;
+  padding: 0 16px;
 }
 .deal {
-  font-size: 3.2rem;
+  font-size: 3rem;
   margin: auto;
-  padding-top: 30px;
+  width: 33%;
+  color: black;
+  padding: 0 20px 30px
 }
 /* !!!!! SHOP & CART SECTIONS (TOP) !!!!! */
 .top {

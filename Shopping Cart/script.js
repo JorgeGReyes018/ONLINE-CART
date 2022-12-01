@@ -1,19 +1,18 @@
 var cartRemove = document.getElementsByClassName("cartRemove")
 for (var i = 0; i< cartRemove.length; i++) {
     var button = cartRemove[i]
-    button.addEventListener("click", function(tap){
-        var buttonClicked = tap.target
-        buttonClicked.parentElement.parentElement.remove()
-        updateTotal()
-    })
+    button.addEventListener("click", removeCartItem)
 }
-
+function removeCartItem (tap) {
+    var buttonClicked = tap.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateTotal()
+}
 var cartAdd = document.getElementsByClassName("cartAdd")
 for (var i = 0; i< cartAdd.length; i++) {
     var button = cartAdd[i]
     button.addEventListener("click", cartAddClicked)
 } 
-
 function cartAddClicked (e) {
     var button = e.target
     var product = button.parentElement.parentElement
@@ -21,9 +20,9 @@ function cartAddClicked (e) {
     var itemPrice = product.getElementsByClassName("itemPrice")[0].innerText
     var itemImg = product.getElementsByClassName("itemImg")[0].src
     addItemToCart(itemName, itemPrice, itemImg)
+    updateTotal()
 }
-// 35 min mark https://www.youtube.com/watch?v=YeFzkC2awTM&list=WL&index=4
-
+// 37:30 min mark https://www.youtube.com/watch?v=YeFzkC2awTM&list=WL&index=4
 function addItemToCart(itemName, itemPrice, itemImg){
     var newCartItem = document.createElement("tr")
     newCartItem.classList.add("cartItem")
@@ -44,14 +43,14 @@ function addItemToCart(itemName, itemPrice, itemImg){
     </td>`
     newCartItem.innerHTML = cartItemContents
     cartBag.append(newCartItem)
+    newCartItem.getElementsByClassName("cartRemove")[0].addEventListener("click", removeCartItem)
+    newCartItem.getElementsByClassName("itemQty")[0].addEventListener("change", qtyChanged)
 }
-
 var qtyNum = document.getElementsByClassName("itemQty")
 for (var i = 0; i < qtyNum.length; i++) {
     var input = qtyNum[i]
     input.addEventListener("change", qtyChanged)
 }
-
 function qtyChanged(e) {
     var input = e.target
     if (isNaN(input.value) || input.value <=0) {
@@ -59,7 +58,6 @@ function qtyChanged(e) {
     }
     updateTotal()
 }
-
 function updateTotal() {
     var cartBag = document.getElementsByClassName("cartBag")[0]
     var cartItems = cartBag.getElementsByClassName("cartItem")
