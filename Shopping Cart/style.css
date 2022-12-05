@@ -8,38 +8,43 @@ ul {
   padding: 0;
 }
 /* !!!!! NAVBAR/HEADER ON ALL HTML FILES !!!!! */
-.navigation {
-  background-color: rgb(20, 20, 20);
-  display: inline-flex;
-  width: 100%;
-}
 .logo {
-  padding-left: 20px;
+  z-index: 99;
+  min-width: 100px;
+  min-height: 100px;
 }
 nav {
-  width: 100%;
+  background-color: rgb(20, 20, 20);
   display: flex;
+  width: 100%;
 }
-.topnav {
-  color: white;
-  list-style: none;
-  display: inline-flex;
-  padding: 0;
-  padding-right: 20px;
-  margin: auto;
-  margin-right: 0;
+#navbarNavDropdown {
+    margin-left: auto;
+    flex-direction: row-reverse}
+.nav-link {
+    color: white;
 }
-.topnav li {
-  margin: auto 20px;
-  min-width: 48px;
+.dropdown-menu.show {
+    background-color: rgb(20, 20, 20);
+} 
+.dropdown-item {
+    color: white;
 }
-.topnav li a {
-  color: white;
+nav li {
+  display: inline;
+  font-size: 18px;
+  margin: 20px;
+}
+nav li a {
   text-decoration: none;
 }
-.topnav li a:hover {
+.nav-link:hover {
   color: rgb(61, 174, 72);
   text-decoration: underline;
+}
+.navbar-toggler-icon {
+    width: 1em;
+    height: 1.5em;
 }
 /* !!!!! FOOTER ON ALL HTML FILES !!!!! */
 footer {
