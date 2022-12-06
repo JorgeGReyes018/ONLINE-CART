@@ -160,6 +160,13 @@ footer h2 {
   margin: auto;
   padding: 0;
 }
+.tabs li a {
+  text-decoration: none;
+  color: white;
+}
+.tabs li a:hover {
+  text-decoration: underline;
+}
 .store {
   display: flex;
   margin: auto;
@@ -269,7 +276,11 @@ h4 {
 }
 .checkoutBtn {
   padding: 4px;
+  font-weight: bold;
   margin: auto;
+}
+.checkoutBtn:hover {
+  color: rgb(36, 146, 47);
 }
 .subtotal {
   margin: auto;
