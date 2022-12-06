@@ -18,6 +18,9 @@ nav {
   display: flex;
   width: 100%;
 }
+.navbar-nav {
+  margin-right: 20px;
+}
 #navbarNavDropdown {
     margin-left: auto;
     flex-direction: row-reverse}
@@ -60,6 +63,11 @@ footer div {
 }
 .midfoot {
   flex-direction: column;
+  max-width: 50%;
+}
+.leftfoot,
+.rightfoot {
+  max-width: 25%;
 }
 footer h2,
 footer p {
@@ -75,7 +83,6 @@ footer p a {
 footer h2 {
   margin-top: 30px;
 }
-
 .sociallogo {
   margin-right: 30px;
 }
@@ -84,21 +91,20 @@ footer h2 {
   margin-top: 30px;
 }
 .showcase {
-  border: solid;
-  border-color: black;
-  border-width: 1px;
+
   max-width: 1700px;
   width: 90%;
-  height: 560px;
   margin: auto;
 }
 .promo {
+  border: solid;
+  border-color: black;
+  border-width: 1px;
   display: inline-flex;
   flex-direction: rows;
   width: 100%;
   height: 100%;
   margin: auto;
-  max-height: 560px;
   text-align: center;
 }
 .promo img {
@@ -106,10 +112,10 @@ footer h2 {
   max-height: 500px;
   width: 33%;
   margin: auto;
-  padding: 0 16px;
+  padding: 16px;
 }
 .deal {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin: auto;
   width: 33%;
   color: black;
@@ -172,7 +178,7 @@ footer h2 {
   width: 70%;
   padding-right: 1%;
 }
-.leftHead {
+.topHeaders {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
@@ -256,9 +262,154 @@ h4 {
   display: flex;
   color: white;
 }
+.checkout {
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.checkoutBtn {
+  padding: 4px;
+  margin: auto;
+}
 .subtotal {
-  margin-top: 10px;
-  margin-left: auto;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
-/* !!!!! NEXT !!!!! */
+
+/* !!!!! MEDIA SCREEN SIZING SECTION !!!!! */
+/* Media Query for 1200px */
+@media (max-width: 1200px) {
+  .deal {
+    font-size: 2rem;
+  }
+}
+/* Media Query for Tablets Ipads portrait mode */
+@media (max-width: 1024px) {
+  .promo {
+    flex-direction: column;
+  }
+  .promo img {
+    width: 50%;
+  }
+  .deal {
+    font-size: 3rem;
+    width: 70%;
+  }
+  .top {
+    flex-direction: column;
+  }
+  .top h1 {
+    text-align: center;
+  }
+  .topHeaders h1{
+    margin: auto;
+    margin-bottom: 30px;
+    align-items: center;
+    text-align: center;
+  }
+  .left {
+    width: 100%;
+    margin: auto;
+  }
+  .right {
+    width: 50%;
+    margin: auto;
+    padding-top: 30px;
+  }
+  .midfoot {
+    max-width: 20%;
+  }
+  footer h2,
+  footer p {
+  font-size: .7rem;
+  }
+  footer p a {
+  font-size: 8px;
+  }
+  .cartfoot {
+    flex-direction: column;
+  }
+  .checkout {
+    margin-top: 20px;
+  }
+  .subtotal {
+    min-width: 80px;
+  }
+}
+/* Media Query for low resolution  Tablets, Ipads */
+@media (max-width: 767px) {
+  .deal {
+    font-size: 2.4rem;
+  }
+  .promo {
+    border: none;
+  }
+  .promo img {
+    min-height: 300px;
+    min-width: 300px;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+  .leftfoot {
+    display: none;
+  }
+  .rightfoot {
+    margin: 10px auto;
+  }
+  .rightfoot,
+  .midfoot {
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    margin: auto;
+  }
+  .sociallogo {
+    margin: auto;
+  }
+  .right {
+    width: 86%;
+    margin: auto;
+    padding-top: 30px;
+  }
+  .col-1 {
+    width: 100%;
+  }
+  .subtotal h4{
+    font-size: 0.8rem;
+  }
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .deal {
+    font-size: 2rem;
+  }
+}
+/* Media Query for Fold */
+@media (max-width: 290px) {
+  .promo img {
+     min-height: 200px;
+     min-width: 200px;
+   }
+  .deal {
+     font-size: 1.4rem;
+     margin-top: 10px;
+  }
+  .top {
+    margin: 0 3%;
+  }
+  .right {
+    width: 100%;
+  }
+  .cartItemImg {
+     max-width: 90px;
+     max-height: 90px;
+   }
+  .col-10 {
+      width: 60%;
+   }
+
+}
