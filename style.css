@@ -22,16 +22,17 @@ nav {
   margin-right: 20px;
 }
 #navbarNavDropdown {
-    margin-left: auto;
-    flex-direction: row-reverse}
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
 .nav-link {
-    color: white;
+  color: white;
 }
 .dropdown-menu.show {
-    background-color: rgb(20, 20, 20);
-} 
+  background-color: rgb(20, 20, 20);
+}
 .dropdown-item {
-    color: white;
+  color: white;
 }
 nav li {
   display: inline;
@@ -46,8 +47,8 @@ nav li a {
   text-decoration: underline;
 }
 .navbar-toggler-icon {
-    width: 1em;
-    height: 1.5em;
+  width: 1em;
+  height: 1.5em;
 }
 /* !!!!! FOOTER ON ALL HTML FILES !!!!! */
 footer {
@@ -91,7 +92,6 @@ footer h2 {
   margin-top: 30px;
 }
 .showcase {
-
   max-width: 1700px;
   width: 90%;
   margin: auto;
@@ -118,8 +118,8 @@ footer h2 {
   font-size: 2.5rem;
   margin: auto;
   width: 33%;
-  color: black;
-  padding: 0 20px 30px
+  color: white;
+  padding: 0 20px 30px;
 }
 /* !!!!! SHOP & CART SECTIONS (TOP) !!!!! */
 .top {
@@ -314,7 +314,7 @@ h4 {
   .top h1 {
     text-align: center;
   }
-  .topHeaders h1{
+  .topHeaders h1 {
     margin: auto;
     margin-bottom: 30px;
     align-items: center;
@@ -334,10 +334,10 @@ h4 {
   }
   footer h2,
   footer p {
-  font-size: .7rem;
+    font-size: 0.7rem;
   }
   footer p a {
-  font-size: 8px;
+    font-size: 8px;
   }
   .cartfoot {
     flex-direction: column;
@@ -389,7 +389,7 @@ h4 {
   .col-1 {
     width: 100%;
   }
-  .subtotal h4{
+  .subtotal h4 {
     font-size: 0.8rem;
   }
 }
@@ -402,12 +402,12 @@ h4 {
 /* Media Query for Fold */
 @media (max-width: 290px) {
   .promo img {
-     min-height: 200px;
-     min-width: 200px;
-   }
+    min-height: 200px;
+    min-width: 200px;
+  }
   .deal {
-     font-size: 1.4rem;
-     margin-top: 10px;
+    font-size: 1.4rem;
+    margin-top: 10px;
   }
   .top {
     margin: 0 3%;
@@ -416,11 +416,10 @@ h4 {
     width: 100%;
   }
   .cartItemImg {
-     max-width: 90px;
-     max-height: 90px;
-   }
+    max-width: 90px;
+    max-height: 90px;
+  }
   .col-10 {
-      width: 60%;
-   }
-
+    width: 60%;
+  }
 }
